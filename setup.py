@@ -1,6 +1,6 @@
 import setuptools
 from setuptools import setup
-from sangmyung_univ_auth import __VERSION__, __AUTHOR__
+from sangmyung_univ_auth import __VERSION__
 
 with open('README.md', 'r', encoding='utf-8') as f:
     long_description = f.read()
