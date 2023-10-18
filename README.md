@@ -1,23 +1,18 @@
 # sangmyung-univ-auth ![Python versions](https://img.shields.io/badge/Python-3.9-blue) ![License](https://img.shields.io/badge/license-MIT-green) ![Release](https://img.shields.io/badge/release-0.0.1-red)
-### 상명대학교 재학생 인증 라이브러리
+상명대학교 재학생 인증 라이브러리
 
----
+## Features
+- 상명대학교 재학생 여부를 간편하게 확인하는 라이브러리입니다.
+- 재학생 인증 방식은 상명대학교 e-Campus 세션 인증 방식입니다.
 
 ## Easy to install
-
 **Pip**: `pip install sangmyung-univ-auth`
 
 **Direct:**
-
 - `git clone https://github.com/hyunmin0317/sangmyung-univ-auth`
 - `python setup.py install`
 
 ## Easy to use
-
-상명대학교 재학생 여부를 간편하게 확인하는 라이브러리입니다.<br>
-재학생 인증 방식은 상명대학교 e-Campus 세션 인증 방식이며,<br>
-해당 라이브러리 사용 방법은 아래와 같습니다.
-
 ```python
 >>> from sangmyung_univ_auth import auth
 >>> result = auth('201911019', '<my-password>')
@@ -31,10 +26,7 @@ True
 {'name': '최현민', 'department': '컴퓨터과학전공', 'email': 'choihm9903@naver.com'}
 ```
 
-### AuthResponse
-
-인증 결과는 namedtuple 형태로 반환됩니다.
-
+## AuthResponse
 ```python
 AuthResponse(
 	is_auth=True,
@@ -46,6 +38,7 @@ AuthResponse(
     }
 )
 ```
+
 - **is_auth: 인증 성공 여부**
   - Type: bool
   - Value
@@ -63,3 +56,6 @@ AuthResponse(
     - name: 이름
     - department: 학과
     - email: 이메일
+
+## References
+- https://pypi.org/project/sangmyung-univ-auth/
