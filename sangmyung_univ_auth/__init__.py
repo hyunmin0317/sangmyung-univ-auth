@@ -1,3 +1,3 @@
 from .auth import auth
 
-__VERSION__ = "0.0.1"
+__VERSION__ = "1.0.0"
