@@ -1,5 +1,4 @@
 import requests
-from requests import Session
 from bs4 import BeautifulSoup as bs
 
 
@@ -12,7 +11,7 @@ def session_request(username: str, password: str):
         return
 
 
-def get_userinfo(session: Session) -> dict:
+def get_userinfo(session) -> dict:
     request = session.get("https://ecampus.smu.ac.kr/user/user_edit.php")
     source = request.text
     soup = bs(source, "html.parser")
