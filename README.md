@@ -29,13 +29,13 @@ True
 ## AuthResponse
 ```python
 AuthResponse(
-	is_auth=True,
-	code='success',
-	body={
-        'name': '최현민', 
-        'department': '컴퓨터과학전공', 
-        'email': 'choihm9903@naver.com'
-    }
+  is_auth=True,
+  code='success',
+  body={
+    'name': '최현민', 
+    'department': '컴퓨터과학전공', 
+    'email': 'choihm9903@naver.com'
+  }
 )
 ```
 
