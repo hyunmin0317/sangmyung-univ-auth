@@ -21,7 +21,7 @@ def _auth_failed():
     return AuthResponse(
         is_auth=False,
         code='auth_failed',
-        body={"message": "아이디 및 비밀번호가 일치하지 않습니다."}
+        body={'message': '아이디 및 비밀번호가 일치하지 않습니다.'}
     )
 
 
