@@ -12,8 +12,8 @@ def authenticate(username: str, password: str):
 
 
 def get_userinfo(session) -> dict:
-    source = session.get('https://ecampus.smu.ac.kr/user/user_edit.php').text
-    soup = bs(source, 'html.parser')
+    response = session.get('https://ecampus.smu.ac.kr/user/user_edit.php')
+    soup = bs(response.text, 'html.parser')
     return {
         'name': soup.find('input', id='id_firstname').get('value'),
         'department': soup.find('input', id='id_department').get('value'),
