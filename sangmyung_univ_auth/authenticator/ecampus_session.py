@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup as bs
 
 
-def session_request(username: str, password: str):
+def authenticate(username: str, password: str):
     with requests.session() as s:
         user_info = {"username": username, "password": password}
         request = s.post("https://ecampus.smu.ac.kr/login/index.php", data=user_info)
