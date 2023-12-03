@@ -1,10 +1,12 @@
 import os
 import unittest
 from sangmyung_univ_auth import auth
+from dotenv import load_dotenv
 
 
 class MyTestCase(unittest.TestCase):
     def setUp(self):
+        load_dotenv()
         self.username = os.getenv('USERNAME')
         self.password = os.getenv('PASSWORD')
 
