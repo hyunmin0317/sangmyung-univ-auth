@@ -1,1 +1,1 @@
-from .ecampus_session import authenticate, get_userinfo
+from .portal_ssotoken import authenticate, get_userinfo
