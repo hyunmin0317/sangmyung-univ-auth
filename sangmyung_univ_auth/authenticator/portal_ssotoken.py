@@ -7,9 +7,8 @@ def authenticate(username: str, password: str):
         user_info = {'user_id': username, 'user_password': password}
         request = session.post(url, data=user_info)
         session.get('https://smul.smu.ac.kr/index.do')
-        if request.url == url:
-            return
-        return session
+        if request.url != url:
+            return session
 
 
 def get_userinfo(session, username) -> dict:
