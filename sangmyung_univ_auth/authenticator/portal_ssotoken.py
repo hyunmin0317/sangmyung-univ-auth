@@ -11,9 +11,14 @@ def authenticate(username: str, password: str):
             return session
 
 
-def get_userinfo(session, username) -> dict:
-    response = session.post('https://smul.smu.ac.kr/UsrSchMng/selectStdInfo.do', data={'@d#': '@d1#', '@d1#tp': 'dm', '_AUTH_MENU_KEY': 'usrCPsnlInfoUpd-STD', '@d1#strStdNo': username})
-    data = response.json()['dsStdInfoList'][0]
+def get_data(session, username: str, url: str) -> dict:
+    response = session.post(url, data={'@d#': '@d1#', '@d1#tp': 'dm', '_AUTH_MENU_KEY': 'usrCPsnlInfoUpd-STD', '@d1#strStdNo': username})
+    return response.json()
+
+
+def get_userinfo(session, username: str) -> dict:
+    response = get_data(session, username, 'https://smul.smu.ac.kr/UsrSchMng/selectStdInfo.do')
+    data = response['dsStdInfoList'][0]
     return {
         'name': data['NM_KOR'],
         'department': data['TMP_DEPT_MJR_NM'].split()[-1],
@@ -21,6 +26,6 @@ def get_userinfo(session, username) -> dict:
     }
 
 
-def get_courses(session, username) -> list:
-    response = session.post('https://smul.smu.ac.kr/UsrRecMatt/list.do', data={'@d#': '@d1#', '@d1#tp': 'dm', '_AUTH_MENU_KEY': 'usrCPsnlInfoUpd-STD', '@d1#strStdNo': username})
-    return response.json()['dsRecMattList']
+def get_courses(session, username: str) -> list:
+    response = get_data(session, username, 'https://smul.smu.ac.kr/UsrRecMatt/list.do')
+    return response['dsRecMattList']
