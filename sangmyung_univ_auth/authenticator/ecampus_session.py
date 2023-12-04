@@ -3,12 +3,11 @@ from bs4 import BeautifulSoup as bs
 
 
 def authenticate(username: str, password: str):
-    with requests.session() as s:
+    with requests.session() as session:
         user_info = {'username': username, 'password': password}
-        request = s.post('https://ecampus.smu.ac.kr/login/index.php', data=user_info)
+        request = session.post('https://ecampus.smu.ac.kr/login/index.php', data=user_info)
         if request.url == 'https://ecampus.smu.ac.kr/':
-            return s
-        return
+            return session
 
 
 def get_userinfo(session) -> dict:
