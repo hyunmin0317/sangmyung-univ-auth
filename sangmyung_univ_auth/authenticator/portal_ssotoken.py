@@ -21,3 +21,9 @@ def get_userinfo(session) -> dict:
         'department': data['TMP_DEPT_MJR_NM'].split()[-1],
         'email': data['EMAIL']
     }
+
+
+def get_courses(session) -> list:
+    session, username = session
+    response = session.post('https://smul.smu.ac.kr/UsrRecMatt/list.do', data={'@d#': '@d1#', '@d1#tp': 'dm', '_AUTH_MENU_KEY': 'usrCPsnlInfoUpd-STD', '@d1#strStdNo': username})
+    return response.json()['dsRecMattList']
