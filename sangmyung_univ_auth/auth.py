@@ -7,7 +7,7 @@ def auth(username: str, password: str) -> AuthResponse:
         session = authenticate(username, password)
         if not session:
             return _auth_failed()
-        userinfo: dict = get_userinfo(session)
+        userinfo: dict = get_userinfo(session, username)
         return _success(body=userinfo)
     except Exception:
         return _unknown_issue()
