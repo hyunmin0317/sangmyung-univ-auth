@@ -1,9 +1,9 @@
-# sangmyung-univ-auth ![Python versions](https://img.shields.io/badge/Python-3.9-blue) ![License](https://img.shields.io/badge/license-MIT-green) ![Release](https://img.shields.io/badge/release-1.1.2-red)
+# sangmyung-univ-auth ![Python versions](https://img.shields.io/badge/Python-3.9-blue) ![License](https://img.shields.io/badge/license-MIT-green) ![Release](https://img.shields.io/badge/release-1.1.3-red)
 **상명대학교 재학생 인증 라이브러리**
 
 ## Features
 - 상명대학교 재학생 여부를 간편하게 확인하는 라이브러리입니다.
-- 재학생 인증 방식은 상명대학교 e-Campus 세션 인증 방식입니다.
+- 재학생 인증 방식은 상명대학교 포털 SSO 인증 방식입니다.
 
 ## Easy to install
 **Pip**: `pip install sangmyung-univ-auth`
