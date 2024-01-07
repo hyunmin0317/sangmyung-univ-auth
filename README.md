@@ -3,7 +3,7 @@
 
 ## Features
 - 상명대학교 재학생 여부를 간편하게 확인하는 라이브러리입니다.
-- 재학생 인증 방식은 상명대학교 e-Campus 세션 인증 방식입니다.
+- 재학생 인증 방식은 상명대학교 포털 SSO 인증 방식입니다.
 
 ## Easy to install
 **Pip**: `pip install sangmyung-univ-auth`
