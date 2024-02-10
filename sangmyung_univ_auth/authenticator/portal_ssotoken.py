@@ -26,6 +26,18 @@ def get_userinfo(session, username: str) -> dict:
     }
 
 
+def get_detail(session, username: str) -> dict:
+    response = get_data(session, username, 'https://smul.smu.ac.kr/UsrSchMng/selectStdInfo.do')
+    data = response['dsStdInfoList'][0]
+    return {
+        'name': data['NM_KOR'],
+        'department': data['TMP_DEPT_MJR_NM'].split()[-1],
+        'email': data['EMAIL'],
+        'year': data['SHYR'],
+        'semester': data['CMP_SMT']
+    }
+
+
 def get_courses(session, username: str) -> list:
     response = get_data(session, username, 'https://smul.smu.ac.kr/UsrRecMatt/list.do')
     return response['dsRecMattList']
