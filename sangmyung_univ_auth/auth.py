@@ -1,4 +1,4 @@
-from sangmyung_univ_auth.authenticator import authenticate, get_userinfo, get_courses
+from sangmyung_univ_auth.authenticator import authenticate, get_userinfo, get_courses, get_detail
 from sangmyung_univ_auth.response import AuthResponse, _auth_failed, _success, _unknown_issue
 
 
@@ -12,6 +12,10 @@ def process(username: str, password: str, func) -> AuthResponse:
 
 def auth(username: str, password: str) -> AuthResponse:
     return process(username, password, get_userinfo)
+
+
+def auth_detail(username: str, password: str) -> AuthResponse:
+    return process(username, password, get_detail)
 
 
 def completed_courses(username: str, password: str) -> AuthResponse:
