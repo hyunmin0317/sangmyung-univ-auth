@@ -33,6 +33,7 @@ def get_detail(session, username: str) -> dict:
         'name': data['NM_KOR'],
         'department': data['TMP_DEPT_MJR_NM'].split()[-1],
         'email': data['EMAIL'],
+        'number': data['STDNO'],
         'year': data['SHYR'],
         'semester': data['CMP_SMT']
     }
