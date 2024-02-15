@@ -1,4 +1,4 @@
-# sangmyung-univ-auth ![Python versions](https://img.shields.io/badge/Python-3.9-blue) ![License](https://img.shields.io/badge/license-MIT-green) ![Release](https://img.shields.io/badge/release-1.2.1-red)
+# sangmyung-univ-auth ![Python versions](https://img.shields.io/badge/Python-3.9-blue) ![License](https://img.shields.io/badge/license-MIT-green) ![Release](https://img.shields.io/badge/release-1.2.2-red)
 **상명대학교 재학생 인증 라이브러리**
 
 ## Features

@@ -31,9 +31,9 @@ def get_detail(session, username: str) -> dict:
     data = response['dsStdInfoList'][0]
     return {
         'name': data['NM_KOR'],
+        'username': data['STDNO'],
         'department': data['TMP_DEPT_MJR_NM'].split()[-1],
         'email': data['EMAIL'],
-        'number': data['STDNO'],
         'year': data['SHYR'],
         'semester': data['CMP_SMT']
     }
